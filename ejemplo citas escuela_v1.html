@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escuela - Citas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    body {
+      padding: 1rem;
+      background-color: #f9f9f9;
+    }
+    .box {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+    .accordion {
+      cursor: pointer;
+      padding: 1rem;
+      border: none;
+      outline: none;
+      width: 100%;
+      background-color: #ffffff;
+      transition: 0.4s;
+    }
+    .accordion.active, .accordion:hover {
+      background-color: #e8f0fe;
+    }
+    .panel {
+      padding: 0 1rem;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .message.is-success {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">🏫 Bienvenidos a Nuestra Escuela</h1>
+
+      <div class="box">
+        <h2 class="subtitle">👥 ¿Quiénes somos?</h2>
+        <p>Somos una escuela comprometida con el desarrollo humano y profesional de nuestros alumnos. Nuestro enfoque se basa en el respeto, la inclusión y la excelencia académica.</p>
+
+        <h2 class="subtitle">🎯 Misión</h2>
+        <p>Brindar educación de primer nivel, con clases de idiomas accesibles y de alta calidad, formando individuos íntegros y comprometidos con su entorno.</p>
+
+        <h2 class="subtitle">🔭 Visión</h2>
+        <p>Ser una escuela referente por su excelencia académica, trato humano y firme compromiso con la educación.</p>
+
+        <h2 class="subtitle">💡 Valores</h2>
+        <ul>
+          <li>✅ Ética profesional</li>
+          <li>💛 Empatía</li>
+          <li>🌍 Diversidad</li>
+          <li>🤝 Honestidad</li>
+          <li>📘 Responsabilidad</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2 class="subtitle">📚 Materias e Idiomas</h2>
+
+        <button class="accordion">🧒 Educación Primaria</button>
+        <div class="panel">
+          <p>Formación básica con enfoque en valores, ciencias, matemáticas y lenguaje.</p>
+        </div>
+
+        <button class="accordion">🧑‍🎓 Educación Secundaria</button>
+        <div class="panel">
+          <p>Enseñanza intermedia que promueve el pensamiento crítico y el desarrollo personal.</p>
+        </div>
+
+        <button class="accordion">🎓 Preparatoria</button>
+        <div class="panel">
+          <p>Formación académica para el ingreso a la universidad, con orientación vocacional.</p>
+        </div>
+
+        <button class="accordion">🌐 Idiomas</button>
+        <div class="panel">
+          <p>Clases de inglés, francés y alemán con profesores certificados.</p>
+        </div>
+
+        <button class="accordion">⚽ Deportes</button>
+        <div class="panel">
+          <p>Actividades físicas como fútbol, básquetbol, natación y más para un desarrollo integral.</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2 class="subtitle">📅 Agenda tu cita</h2>
+        <form id="citaForm">
+          <div class="field">
+            <label class="label">👨‍👩‍👧‍👦 Nombre completo de los padres:</label>
+            <div class="control">
+              <input class="input" type="text" name="padres" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">📞 Teléfono:</label>
+            <div class="control">
+              <input class="input" type="tel" name="telefono" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">📧 Correo electrónico:</label>
+            <div class="control">
+              <input class="input" type="email" name="correo" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">👶 Nombre del alumno:</label>
+            <div class="control">
+              <input class="input" type="text" name="alumno" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">🧮 Edad del alumno:</label>
+            <div class="control">
+              <input class="input" type="number" name="edad" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">🏷️ Grado:</label>
+            <div class="control">
+              <div class="select">
+                <select name="grado" required>
+                  <option value="Primaria">Primaria</option>
+                  <option value="Secundaria">Secundaria</option>
+                  <option value="Preparatoria">Preparatoria</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">📆 Fecha:</label>
+            <div class="control">
+              <input class="input" type="date" name="fecha" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">🕒 Hora:</label>
+            <div class="control">
+              <input class="input" type="time" name="hora" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">📝 Comentarios:</label>
+            <div class="control">
+              <textarea class="textarea" name="comentarios"></textarea>
+            </div>
+          </div>
+
+          <div class="control">
+            <button class="button is-primary" type="submit">Agendar Cita</button>
+          </div>
+        </form>
+
+        <div id="mensajeExito" class="message is-success mt-4">
+          <div class="message-body">
+            ✅ Gracias, tu cita ha sido agendada.<br>
+            ⏳ Redirigiendo al inicio...<br>
+            🎉 Te contactaremos pronto.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+
+    document.getElementById("citaForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const datos = {};
+      formData.forEach((valor, clave) => {
+        datos[clave] = valor;
+      });
+      console.log("Formulario enviado:", datos);
+
+      const mensaje = document.getElementById("mensajeExito");
+      mensaje.style.display = "block";
+      this.reset();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => mensaje.style.display = "none", 5000);
+    });
+  </script>
+</body>
+
+</html>
